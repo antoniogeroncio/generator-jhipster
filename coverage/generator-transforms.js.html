@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">46.67% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>15/15</span>
+        <span class='fraction'>7/15</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>2/4</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>1/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">46.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>15/15</span>
+        <span class='fraction'>7/15</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -131,21 +131,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">56x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6688x</span>
-<span class="cline-any cline-yes">6688x</span>
-<span class="cline-any cline-yes">6688x</span>
-<span class="cline-any cline-yes">6688x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6688x</span>
-<span class="cline-any cline-yes">6688x</span>
-<span class="cline-any cline-yes">6688x</span>
-<span class="cline-any cline-yes">6688x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">56x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -184,18 +184,18 @@ const prettierOptions = {
 };
 &nbsp;
 const prettierTransform = function(defaultOptions) {
-    const transform = (file, encoding, callback) =&gt; {
+    const transform = <span class="fstat-no" title="function not covered" >(f</span>ile, encoding, callback) =&gt; {
         /* resolve from the projects config */
-        prettier.resolveConfig(file.relative).then(options =&gt; {
-            const str = file.contents.toString('utf8');
-            <span class="missing-if-branch" title="else path not taken" >E</span>if (!options || <span class="branch-1 cbranch-no" title="branch not covered" >Object.keys(options).length === 0)</span> {
-                options = defaultOptions;
+<span class="cstat-no" title="statement not covered" >        prettier.resolveConfig(file.relative).then(<span class="fstat-no" title="function not covered" >op</span>tions =&gt; {</span>
+            const str = <span class="cstat-no" title="statement not covered" >file.contents.toString('utf8');</span>
+<span class="cstat-no" title="statement not covered" >            if (!options || Object.keys(options).length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >                options = defaultOptions;</span>
             }
             // for better errors
-            options.filepath = file.relative;
-            const data = prettier.format(str, options);
-            file.contents = Buffer.from(data);
-            callback(null, file);
+<span class="cstat-no" title="statement not covered" >            options.filepath = file.relative;</span>
+            const data = <span class="cstat-no" title="statement not covered" >prettier.format(str, options);</span>
+<span class="cstat-no" title="statement not covered" >            file.contents = Buffer.from(data);</span>
+<span class="cstat-no" title="statement not covered" >            callback(null, file);</span>
         });
     };
     return through.obj(transform);
@@ -211,7 +211,7 @@ module.exports = {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Dec 11 2018 17:36:03 GMT-0300 (GMT-03:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Dec 15 2018 14:45:35 GMT-0300 (GMT-03:00)
 </div>
 </div>
 <script src="prettify.js"></script>
