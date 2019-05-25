@@ -46,13 +46,22 @@ describe('JHipster Utils', () => {
         });
     });
     describe('::buildEnumFunction', () => {
-        it('describes all the properties of the entity', () => {
-            const packageName = 'com.package';
-            const angularAppName = 'myApp';
-            const clientRootFolder = 'root';
-            const entity = { enumName: 'entityName', fieldValues: 'field1, field2' };
-            const infos = utils.buildEnumInfo(entity, angularAppName, packageName, clientRootFolder);
-            assert.objectContent(infos, { packageName, angularAppName, clientRootFolder: `${clientRootFolder}-` });
+        const packageName = 'com.package';
+        const angularAppName = 'myApp';
+        const entity = { enumName: 'entityName', fieldValues: 'field1,field2, field3' };
+        describe('describes all the properties of the entity', () => {
+            it('return entity all properties set', () => {
+                const clientRootFolder = 'root';
+                const infos = utils.buildEnumInfo(entity, angularAppName, packageName, clientRootFolder);
+                assert.objectContent(infos, { packageName, angularAppName, clientRootFolder: `${clientRootFolder}-`, enumValues: "field1, field2,  field3", enums: ["field1", "field2", "field3"]});
+            });
+        });
+        describe('clientRootFolder is undefined', () => {
+            it('clientRootFolder return empty ', () => {
+                const clientRootFolder = undefined;
+                const infos = utils.buildEnumInfo(entity, angularAppName, packageName, clientRootFolder);
+                assert.textEqual(infos.clientRootFolder, '');
+            });
         });
     });
     describe('::deepFind function', () => {
